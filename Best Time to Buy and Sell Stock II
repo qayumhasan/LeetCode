@@ -1,0 +1,17 @@
+class Solution {
+
+    /**
+     * @param Integer[] $prices
+     * @return Integer
+     */
+    function maxProfit($prices) {
+        $mxProfit = 0;
+        $n = count($prices);
+        for ($i=1; $i < $n ; $i++) { 
+            if($prices[$i] > $prices[$i-1]){
+                $mxProfit += $prices[$i] - $prices[$i-1];
+            }
+        }
+        return $mxProfit;
+    }
+}
